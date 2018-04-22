@@ -21,8 +21,12 @@ void printList(Node* head){
 	cout << endl;
 }
 int findNFromLast(Node *head, int n){
+	if(head == NULL || n<1)	return -1;
 	Node *p1=head,*p2=head;
-	while(n--)	p2 = p2->next;
+	while(n-->1){
+		if(p2==NULL)	return -1;
+		p2 = p2->next;
+	}	
 	while(p2->next!=NULL){
 		p1 = p1->next;
 		p2 = p2->next;
