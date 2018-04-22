@@ -21,7 +21,7 @@ void printList(Node* head){
 	cout << endl;
 }
 void deleteNode(Node* c){
-	if(c == NULL)	return;
+	if(c == NULL || c->next==NULL)	return;
 	c->data = c->next->data;
 	c->next = c->next->next;
 	return;
